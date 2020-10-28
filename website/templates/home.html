@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title>Avengers</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='avengers.css')}}">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    </head>
+    <body>
+        <section class="header">
+            <div class="toggle">
+                <img src="{{url_for('static',filename='10.jpg')}}">
+            </div>
+        </section>
+
+        <section class="banner">
+            <img src=" {{url_for('static',filename='Untitled-design-21.jpg')}}" class="fitBg">
+            <div class="content">
+                    {% with messages=get_flashed_messages(with_categories=true) %}
+                        {% if messages %}
+                            {% for category,message in messages %}
+                                <div class="message">
+                                    {{message}}
+                                </div>
+                            {% endfor %}
+                        {%endif %}
+                    {% endwith%}
+                <h2>Avengers</h2>
+                <p> "Heros are made by the path they choose,not the powers they are graces with."</p>
+                <a href="#about" class="btn">Know More</a>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="contentBx">
+                <h2 class="titleText">Be a Good Human Rather than being Hero</h2>
+                <p class="text"> The Hardest Choice Require Storngest Will!!!</p>
+                <a href="#destination" class="btn"> Give Me More!!!</a>
+            </div>
+            <div class="imgBx">
+                <img src=" {{ url_for('static',filename='Avengers-Endgame-Avenge-the-Fallen-Poster-1050x550.jpg')}}" class="fitBg">
+            </div>
+        </section>
+
+        <section class="banner2">
+            <img src=" {{url_for('static',filename='4.jpg')}}" class="fitBg">
+        </section>
+
+        <section class="destination" id="destination">
+            <div class="content">
+                <h2 class="titleText">Leaders....</h2>
+                <p class="text">I am Iron Man.” —Tony Stark (Robert Downey Jr.) </p>
+            </div>
+            <div class="destinationList">
+                <div class="box">
+                    <div class="imgBx">
+                        <img src=" {{url_for('static',filename='3.jpg')}}" class="fitBg">
+                    </div>
+                    <div class="content">
+                        <h2>Captain America</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src=" {{url_for('static',filename='14.jpeg')}}" class="fitBg">
+                    </div>
+                    <div class="content">
+                        <h2>Black Widow</h2>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="imgBx">
+                        <img src=" {{url_for('static',filename='5.jpg')}}" class="fitBg">
+                    </div>
+                    <div class="content">
+                        <h2>Thor</h2>
+
+                    </div>
+                </div>
+            </div>
+            <a href=" {{url_for('register')}}" class="btn">Wanna be a Avenger? Click Here</a>
+        </section>
+        <section class="banner3">
+            <img src="{{url_for('static',filename='11.jpeg')}}" class="fitBg">
+        </section>
+        <section class="footer">
+            <ul class="sci">
+                <li><a href="#"><img src=" {{url_for('static',filename='fb.png')}}"></a></li>
+                <li><a href="#"><img src="{{url_for('static',filename='twit.png')}}"></a></li>
+                <li><a href="#"><img src="{{url_for('static',filename='insta.jpg')}}"></a></li>
+            </ul>
+        </section>
+    </body>    
+</html>

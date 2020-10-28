@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='avengersregister.css')}}" />
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  </head>
+  <body>
+    <section class="contact">
+      <div class="content">
+        <h2>Contact Us</h2>
+      </div>
+      <div class="container">
+        <div class="contactInfo">
+          <div class="box">
+            <div class="icon">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="text">
+              <h3>Address</h3>
+              <p>My World!!!</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="text">
+              <h3>Phone</h3>
+              <p>123456</p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="icon">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="text">
+              <h3>Email</h3>
+              <p>avengers@gmail.com</p>
+            </div>
+          </div>
+        </div>
+        <div class="contactForm">
+          <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <h2>Let us Know</h2>
+            <div class="inputBox">
+              {% if form.username.errors %}
+                {{ form.username (class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.username.errors %}
+                      <small>{{error}}</small>
+                    {% endfor%}
+                </div>
+              {% else %}
+                  {{ form.username }}
+                  <span>{{ form.username.label }}</span>
+              {% endif %}
+            </div>
+            <div class="inputBox">
+              {% if form.email.errors %}
+                {{ form.email (class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.email.errors %}
+                      <small>{{error}}</small>
+                    {% endfor%}
+                </div>
+              {% else %}
+                  {{ form.email }}
+                  <span>{{ form.email.label }}</span>
+              {% endif %}
+            </div>
+            <div class="inputBox">
+              {% if form.note.errors %}
+                {{ form.note (class="form-control form-control-lg is-invalid") }}
+                <div class="invalid-feedback">
+                    {% for error in form.note.errors %}
+                      <small>{{error}}</small>
+                    {% endfor%}
+                </div>
+              {% else %}
+                  {{ form.note }}
+                  <span>{{ form.note.label }}</span>
+              {% endif %}
+            </div>
+            <div class="inputBox">
+              {{form.send}}
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
